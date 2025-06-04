@@ -1,18 +1,111 @@
+@model MvcCalculator.Models.CalculatorViewModel
 @{
-    ViewData["Title"] = "Calculator";
+    ViewData["Title"] = "MVC Calculator";
 }
-<h2>Welcome to the Calculator!</h2>
 
-<h2>Simple Calculator</h2>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
 
-<form method="post">
-    <input type="number" step="any" name="number1" required placeholder="First number" />
-    <input type="number" step="any" name="number2" required placeholder="Second number" />
-    <button type="submit" name="operation" value="Add">Add</button>
-    <button type="submit" name="operation" value="Subtract">Subtract</button>
-</form>
+<style>
+    body {
+        background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
+        min-height: 100vh;
+    }
+    .calculator-card {
+        max-width: 420px;
+        margin: 60px auto;
+        box-shadow: 0 6px 24px rgba(0,0,0,0.08), 0 1.5px 6px rgba(0,0,0,0.04);
+        border-radius: 18px;
+        background: #fff;
+        padding: 2.5rem 2rem 2rem 2rem;
+    }
+    .calculator-title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+    .form-label {
+        font-weight: 500;
+        color: #4a5568;
+    }
+    .btn-calculate {
+        width: 100%;
+        font-size: 1.15rem;
+        font-weight: 600;
+        background: linear-gradient(90deg, #6366f1 0%, #60a5fa 100%);
+        border: none;
+        color: #fff;
+        border-radius: 8px;
+        transition: background 0.2s;
+    }
+    .btn-calculate:hover {
+        background: linear-gradient(90deg, #4f46e5 0%, #2563eb 100%);
+    }
+    .result-box, .error-box {
+        margin-top: 1.5rem;
+        font-size: 1.15rem;
+        border-radius: 8px;
+        padding: 1rem;
+        text-align: center;
+    }
+    .result-box {
+        background: #f0fdf4;
+        color: #166534;
+        border: 1px solid #bbf7d0;
+    }
+    .error-box {
+        background: #fef2f2;
+        color: #b91c1c;
+        border: 1px solid #fecaca;
+    }
+</style>
 
-@if (ViewBag.Result != null)
-{
-    <h3>Result: @ViewBag.Result</h3>
-}
+<div class="calculator-card">
+    <div class="calculator-title">ASP.NET Core MVC Calculator</div>
+    <form asp-action="Index" method="post">
+        <div class="mb-3">
+            <label asp-for="Number1" class="form-label">First Number</label>
+            <input asp-for="Number1" class="form-control form-control-lg" type="number" step="any" autocomplete="off" placeholder="Enter first number"/>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Operation" class="form-label">Operation</label>
+            <div class="d-flex justify-content-between">
+                <div class="form-check form-check-inline">
+                    <input asp-for="Operation" class="form-check-input" type="radio" value="Add" id="addOp"/>
+                    <label class="form-check-label" for="addOp">+</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input asp-for="Operation" class="form-check-input" type="radio" value="Subtract" id="subOp"/>
+                    <label class="form-check-label" for="subOp">−</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input asp-for="Operation" class="form-check-input" type="radio" value="Multiply" id="mulOp"/>
+                    <label class="form-check-label" for="mulOp">×</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input asp-for="Operation" class="form-check-input" type="radio" value="Divide" id="divOp"/>
+                    <label class="form-check-label" for="divOp">÷</label>
+                </div>
+            </div>
+        </div>
+        <div class="mb-4">
+            <label asp-for="Number2" class="form-label">Second Number</label>
+            <input asp-for="Number2" class="form-control form-control-lg" type="number" step="any" autocomplete="off" placeholder="Enter second number"/>
+        </div>
+        <button type="submit" class="btn btn-calculate mb-2">Calculate</button>
+    </form>
+
+    @if (Model.Result != null)
+    {
+        <div class="result-box">
+            <strong>Result:</strong> @Model.Result
+        </div>
+    }
+    @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+    {
+        <div class="error-box">
+            @Model.ErrorMessage
+        </div>
+    }
+</div>

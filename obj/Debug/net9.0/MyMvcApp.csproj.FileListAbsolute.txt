@@ -90,3 +90,4 @@
 /Users/ishit/fullstack/MyMvcApp/obj/Debug/net9.0/MyMvcApp.pdb
 /Users/ishit/fullstack/MyMvcApp/obj/Debug/net9.0/MyMvcApp.genruntimeconfig.cache
 /Users/ishit/fullstack/MyMvcApp/obj/Debug/net9.0/ref/MyMvcApp.dll
+/Users/ishit/fullstack/MyMvcApp/obj/Debug/net9.0/MyMvcApp.sourcelink.json
