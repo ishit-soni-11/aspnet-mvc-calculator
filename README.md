@@ -44,6 +44,39 @@ This project is a simple calculator web application built from scratch using ASP
 - Improved UI/UX design
 - Unit tests for controller logic
 
+Feature: Calculation History
+Overview
+The calculator now includes a calculation history feature. Every time a calculation is performed, the operation and result are saved and displayed in a list below the calculator interface. This helps users keep track of their recent calculations during their session.
+
+How It Works
+Each time you perform a calculation (add, subtract, multiply, divide), the operation and result are added to the top of the history list.
+
+The history is stored using session data, so it persists as long as your browser session is active.
+
+The history list appears below the calculator form and updates automatically after each calculation.
+
+Example
+If you calculate:
+
+5 + 3 = 8
+
+10 × 2 = 20
+
+Your calculation history will show:
+
+text
+10 × 2 = 20
+5 + 3 = 8
+Benefits
+Improved user experience: Users can easily review previous calculations without re-entering data.
+
+Session-based: History is cleared when the browser session ends, keeping data private and relevant.
+
+Technical Notes
+The history feature was implemented by updating the MVC model, controller, and view, and by using session storage to persist the list.
+
+This update is tracked in Git with a commit message:
+feat: add calculation history feature to calculator
 ## Author
 
 - Ishit
