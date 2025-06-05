@@ -91,3 +91,6 @@
 /Users/ishit/fullstack/MyMvcApp/obj/Debug/net9.0/MyMvcApp.genruntimeconfig.cache
 /Users/ishit/fullstack/MyMvcApp/obj/Debug/net9.0/ref/MyMvcApp.dll
 /Users/ishit/fullstack/MyMvcApp/obj/Debug/net9.0/MyMvcApp.sourcelink.json
+/Users/ishit/fullstack/MyMvcApp/bin/Debug/net9.0/Newtonsoft.Json.dll
+/Users/ishit/fullstack/MyMvcApp/obj/Debug/net9.0/MyMvcApp.csproj.AssemblyReference.cache
+/Users/ishit/fullstack/MyMvcApp/obj/Debug/net9.0/MyMvcApp.csproj.Up2Date

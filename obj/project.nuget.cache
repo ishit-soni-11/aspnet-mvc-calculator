@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "BfiAVRjxlaQ=",
+  "dgSpecHash": "/6DO+FhtVzA=",
   "success": true,
   "projectFilePath": "/Users/ishit/fullstack/MyMvcApp/MyMvcApp.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/ishit/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
