@@ -6,9 +6,10 @@ namespace MyMvcApp.Models
     {
         public double? Number1 { get; set; }
         public double? Number2 { get; set; }
-        public string? Operation { get; set; }
+        public string Operation { get; set; }
         public double? Result { get; set; }
-        public string? ErrorMessage { get; set; }
-        public List<string> History { get; set; } = new List<string>();
+        public string ErrorMessage { get; set; }
+        public List<string> RecentHistory { get; set; } = new List<string>();
+        public List<string> FullHistory { get; set; } = new List<string>();
     }
 }

@@ -3,53 +3,211 @@
     ViewData["Title"] = "MVC Calculator";
 }
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
 <style>
-    body { background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%); min-height: 100vh; }
-    .calculator-card { max-width: 420px; margin: 60px auto; box-shadow: 0 6px 24px rgba(0,0,0,0.08), 0 1.5px 6px rgba(0,0,0,0.04); border-radius: 18px; background: #fff; padding: 2.5rem 2rem 2rem 2rem; }
-    .calculator-title { font-size: 2rem; font-weight: 700; color: #2d3748; margin-bottom: 1.5rem; text-align: center; }
-    .form-label { font-weight: 500; color: #4a5568; }
-    .btn-calculate { width: 100%; font-size: 1.15rem; font-weight: 600; background: linear-gradient(90deg, #6366f1 0%, #60a5fa 100%); border: none; color: #fff; border-radius: 8px; transition: background 0.2s; }
-    .btn-calculate:hover { background: linear-gradient(90deg, #4f46e5 0%, #2563eb 100%); }
-    .result-box, .error-box { margin-top: 1.5rem; font-size: 1.15rem; border-radius: 8px; padding: 1rem; text-align: center; }
-    .result-box { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
-    .error-box { background: #fef2f2; color: #b91c1c; border: 1px solid #fecaca; }
+    .dark-mode {
+        background: linear-gradient(135deg, #181a1b 0%, #23272f 100%) !important;
+    }
+
+    .dark-mode .calculator-card {
+        background: #23272f !important;
+        color: #f1f5f9 !important;
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.32), 0 1.5px 6px rgba(0, 0, 0, 0.14);
+    }
+
+    .dark-mode .calculator-title,
+    .dark-mode .form-label {
+        color: #e0e7ef !important;
+    }
+
+    .dark-mode .form-control {
+        background: #181a1b;
+        color: #f1f5f9;
+        border-color: #374151;
+    }
+
+    .dark-mode .btn-calculate {
+        background: linear-gradient(90deg, #6366f1 0%, #0ea5e9 100%) !important;
+        color: #e0e7ef !important;
+    }
+
+    .dark-mode .btn-calculate:hover {
+        background: linear-gradient(90deg, #4f46e5 0%, #2563eb 100%) !important;
+    }
+
+    .dark-mode .result-box {
+        background: #222e22;
+        color: #bbf7d0;
+        border-color: #22d3ee;
+    }
+
+    .dark-mode .error-box {
+        background: #3b1f1f;
+        color: #fecaca;
+        border-color: #fecaca;
+    }
+
+    .dark-mode .list-group-item {
+        background: #1e293b;
+        color: #e0e7ef;
+    }
+
+    body {
+        background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
+        min-height: 100vh;
+    }
+
+    <button id="toggle-dark" type="button" class="btn btn-outline-secondary mb-3 float-end" style="border-radius: 20px;">🌙 Dark Mode </button>.calculator-card {
+        max-width: 420px;
+        margin: 60px auto;
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08), 0 1.5px 6px rgba(0, 0, 0, 0.04);
+        border-radius: 18px;
+        background: #fff;
+        padding: 2.5rem 2rem 2rem 2rem;
+    }
+
+    .calculator-title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .form-label {
+        font-weight: 500;
+        color: #4a5568;
+    }
+
+    .btn-calculate {
+        width: 100%;
+        font-size: 1.15rem;
+        font-weight: 600;
+        background: linear-gradient(90deg, #6366f1 0%, #60a5fa 100%);
+        border: none;
+        color: #fff;
+        border-radius: 8px;
+        transition: background 0.2s;
+    }
+
+    .btn-calculate:hover {
+        background: linear-gradient(90deg, #4f46e5 0%, #2563eb 100%);
+    }
+
+    .result-box,
+    .error-box {
+        margin-top: 1.5rem;
+        font-size: 1.15rem;
+        border-radius: 8px;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .result-box {
+        background: #f0fdf4;
+        color: #166534;
+        border: 1px solid #bbf7d0;
+    }
+
+    .error-box {
+        background: #fef2f2;
+        color: #b91c1c;
+        border: 1px solid #fecaca;
+    }
+
+    <style>.op-btn-group .form-check {
+        margin-bottom: 0.5rem;
+        margin-right: 1.5rem;
+        min-width: 60px;
+    }
 </style>
+<div class="op-btn-group d-flex flex-wrap mb-3">
+    <!-- Place your operator radio buttons here as before -->
+</div>
+
+</style>
+<button id="toggle-dark" type="button" class="btn btn-outline-secondary mb-3 float-end" style="border-radius: 20px;">
+    🌙 Dark Mode
+</button>
 
 <div class="calculator-card">
-    <div class="calculator-title">ASP.NET Core MVC Calculator</div>
+    <div class="calculator-title">Powerful Calculator</div>
     <form asp-action="Index" method="post">
         <div class="mb-3">
             <label asp-for="Number1" class="form-label">First Number</label>
-            <input asp-for="Number1" class="form-control form-control-lg" type="number" step="any" autocomplete="off" placeholder="Enter first number"/>
+            <input asp-for="Number1" class="form-control form-control-lg" type="number" step="any" autocomplete="off"
+                placeholder="Enter first number" />
         </div>
         <div class="mb-3">
             <label asp-for="Operation" class="form-label">Operation</label>
-            <div class="d-flex justify-content-between">
-                <div class="form-check form-check-inline">
-                    <input asp-for="Operation" class="form-check-input" type="radio" value="Add" id="addOp"/>
-                    <label class="form-check-label" for="addOp">+</label>
+            <div class="row g-2 mb-3">
+                <div class="col-6 col-md-3">
+                    <div class="form-check">
+                        <input asp-for="Operation" class="form-check-input" type="radio" value="Add" id="addOp" />
+                        <label class="form-check-label" for="addOp">+</label>
+                    </div>
                 </div>
-                <div class="form-check form-check-inline">
-                    <input asp-for="Operation" class="form-check-input" type="radio" value="Subtract" id="subOp"/>
-                    <label class="form-check-label" for="subOp">−</label>
+                <div class="col-6 col-md-3">
+                    <div class="form-check">
+                        <input asp-for="Operation" class="form-check-input" type="radio" value="Subtract" id="subOp" />
+                        <label class="form-check-label" for="subOp">−</label>
+                    </div>
                 </div>
-                <div class="form-check form-check-inline">
-                    <input asp-for="Operation" class="form-check-input" type="radio" value="Multiply" id="mulOp"/>
-                    <label class="form-check-label" for="mulOp">×</label>
+                <div class="col-6 col-md-3">
+                    <div class="form-check">
+                        <input asp-for="Operation" class="form-check-input" type="radio" value="Multiply" id="mulOp" />
+                        <label class="form-check-label" for="mulOp">×</label>
+                    </div>
                 </div>
-                <div class="form-check form-check-inline">
-                    <input asp-for="Operation" class="form-check-input" type="radio" value="Divide" id="divOp"/>
-                    <label class="form-check-label" for="divOp">÷</label>
+                <div class="col-6 col-md-3">
+                    <div class="form-check">
+                        <input asp-for="Operation" class="form-check-input" type="radio" value="Divide" id="divOp" />
+                        <label class="form-check-label" for="divOp">÷</label>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="form-check">
+                        <input asp-for="Operation" class="form-check-input" type="radio" value="Modulus" id="modOp" />
+                        <label class="form-check-label" for="modOp">%</label>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="form-check">
+                        <input asp-for="Operation" class="form-check-input" type="radio" value="Exponent" id="expOp" />
+                        <label class="form-check-label" for="expOp">^</label>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="form-check">
+                        <input asp-for="Operation" class="form-check-input" type="radio" value="Sqrt" id="sqrtOp" />
+                        <label class="form-check-label" for="sqrtOp">√</label>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="form-check">
+                        <input asp-for="Operation" class="form-check-input" type="radio" value="Factorial"
+                            id="factOp" />
+                        <label class="form-check-label" for="factOp">n!</label>
+                    </div>
                 </div>
             </div>
+
         </div>
         <div class="mb-4">
             <label asp-for="Number2" class="form-label">Second Number</label>
-            <input asp-for="Number2" class="form-control form-control-lg" type="number" step="any" autocomplete="off" placeholder="Enter second number"/>
+            <input asp-for="Number2" class="form-control form-control-lg" type="number" step="any" autocomplete="off"
+                placeholder="Enter second number" />
         </div>
-        <button type="submit" class="btn btn-calculate mb-2">Calculate</button>
+        <button type="submit" class="btn btn-calculate mb-2 w-100">Calculate</button>
+        <div>
+            <button type="button" onclick="window.location.href='@Url.Action("FullHistory", "Calculator")'">
+                Show Full History
+            </button>
+
+        </div>
     </form>
 
     @if (Model.Result != null)
@@ -64,7 +222,7 @@
             @Model.ErrorMessage
         </div>
     }
-    @if (Model.History != null && Model.History.Any())
+    @* @if (Model.History != null && Model.History.Any())
     {
         <div class="mt-4">
             <h5>Calculation History</h5>
@@ -74,6 +232,29 @@
                     <li class="list-group-item">@entry</li>
                 }
             </ul>
+            <form asp-action="ClearHistory" method="post" class="d-inline">
+                <button type="submit" class="btn btn-danger btn-sm mt-2">Clear History</button>
+            </form>
+            <form asp-action="DownloadHistory" method="post" class="d-inline">
+                <button type="submit" class="btn btn-success btn-sm mt-2 ms-2">Download History</button>
+            </form>
         </div>
-    }
+    } *@
+
+    <script>
+        // Check for saved mode on page load
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+            document.getElementById('toggle-dark').innerText = '☀️ Light Mode';
+        }
+
+        document.getElementById('toggle-dark').addEventListener('click', function () {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            this.innerText = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+            localStorage.setItem('darkMode', isDark);
+        });
+    </script>
+
+
 </div>

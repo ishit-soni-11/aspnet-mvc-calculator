@@ -1,0 +1,9 @@
+/Users/ishit/fullstack/MyMvcApp/obj/Release/net9.0/MyMvcApp.csproj.AssemblyReference.cache
+/Users/ishit/fullstack/MyMvcApp/obj/Release/net9.0/MyMvcApp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ishit/fullstack/MyMvcApp/obj/Release/net9.0/MyMvcApp.AssemblyInfoInputs.cache
+/Users/ishit/fullstack/MyMvcApp/obj/Release/net9.0/MyMvcApp.AssemblyInfo.cs
+/Users/ishit/fullstack/MyMvcApp/obj/Release/net9.0/MyMvcApp.csproj.CoreCompileInputs.cache
+/Users/ishit/fullstack/MyMvcApp/obj/Release/net9.0/MyMvcApp.MvcApplicationPartsAssemblyInfo.cache
+/Users/ishit/fullstack/MyMvcApp/obj/Release/net9.0/MyMvcApp.RazorAssemblyInfo.cache
+/Users/ishit/fullstack/MyMvcApp/obj/Release/net9.0/MyMvcApp.RazorAssemblyInfo.cs
+/Users/ishit/fullstack/MyMvcApp/obj/Release/net9.0/MyMvcApp.sourcelink.json
