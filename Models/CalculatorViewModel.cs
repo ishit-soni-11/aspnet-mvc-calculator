@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace MyMvcApp.Models
+namespace XCalc.Models
 {
     public class CalculatorViewModel
     {

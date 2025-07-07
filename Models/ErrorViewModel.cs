@@ -1,4 +1,4 @@
-namespace MyMvcApp.Models;
+namespace XCalc.Models;
 
 public class ErrorViewModel
 {

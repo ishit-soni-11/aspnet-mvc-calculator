@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using MyMvcApp.Data;
+using XCalc.Data;
 
 #nullable disable
 
-namespace MyMvcApp.Migrations
+namespace XCalc.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("20250608182907_InitialCreate")]

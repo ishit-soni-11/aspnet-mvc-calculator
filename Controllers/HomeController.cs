@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 
 
-namespace MyMvcApp.Controllers
+namespace XCalc.Controllers
 {
     public class HomeController : Controller
     {
@@ -28,5 +28,5 @@ namespace MyMvcApp.Controllers
 
 
     }
-} 
+}
 

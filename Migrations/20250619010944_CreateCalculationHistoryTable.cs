@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace MyMvcApp.Migrations
+namespace XCalc.Migrations
 {
     /// <inheritdoc />
     public partial class CreateCalculationHistoryTable : Migration

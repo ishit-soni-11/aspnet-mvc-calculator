@@ -1,6 +1,6 @@
 using System;
 
-namespace MyMvcApp.Models
+namespace XCalc.Models
 {
     public class CalculationHistory
     {

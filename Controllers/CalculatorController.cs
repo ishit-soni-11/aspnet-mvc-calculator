@@ -1,13 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using MyMvcApp.Data;
-using MyMvcApp.Models;
+using XCalc.Data;
+using XCalc.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MyMvcApp.Controllers
+namespace XCalc.Controllers
 {
     public class CalculatorController : Controller
     {

@@ -3,11 +3,11 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using MyMvcApp.Data;
+using XCalc.Data;
 
 #nullable disable
 
-namespace MyMvcApp.Migrations
+namespace XCalc.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -17,7 +17,7 @@ namespace MyMvcApp.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.5");
 
-            modelBuilder.Entity("MyMvcApp.Models.CalculationHistory", b =>
+            modelBuilder.Entity("XCalc.Models.CalculationHistory", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

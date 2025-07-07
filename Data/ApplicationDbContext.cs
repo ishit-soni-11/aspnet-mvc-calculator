@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using MyMvcApp.Models;
+using XCalc.Models;
 
-namespace MyMvcApp.Data
+namespace XCalc.Data
 {
     public class ApplicationDbContext : DbContext
     {
