@@ -1,0 +1,73 @@
+<style>
+    .timeline {
+        border-left: 4px solid #0d6efd;
+        margin-left: 1.5rem;
+        padding-left: 2rem;
+    }
+
+    .timeline-item {
+        margin-bottom: 2rem;
+        position: relative;
+    }
+
+    .timeline-item:before {
+        content: '';
+        position: absolute;
+        left: -2.3rem;
+        top: 0.3rem;
+        width: 1rem;
+        height: 1rem;
+        background: #0d6efd;
+        border-radius: 50%;
+        border: 3px solid #fff;
+        box-shadow: 0 0 0 2px #0d6efd;
+    }
+</style>
+
+
+@{
+    ViewData["Title"] = "History of Calculation";
+}
+
+<div class="container mt-5 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-9">
+            <div class="text-center mb-4">
+                <h1 class="display-5 fw-bold">The Evolution of Calculation</h1>
+                <p class="lead">From ancient tools to modern apps, see how humans have calculated through the ages!</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>40,000+ Years Ago: Tally Sticks</h4>
+                    <p>Early humans used bones and sticks to keep count—these are the first known calculation tools.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>2400 BCE: The Abacus</h4>
+                    <p>The abacus, developed in Mesopotamia and China, made arithmetic faster and more reliable.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>500 CE: The Indian Numeral System</h4>
+                    <p>The concept of zero and the decimal system emerged in India, revolutionizing math worldwide.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>17th Century: Mechanical Calculators</h4>
+                    <p>Pascal and Leibniz built machines that could add, subtract, multiply, and divide.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>1970s: Electronic Calculators</h4>
+                    <p>Handheld electronic calculators became affordable and widespread, changing daily life.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Today: Digital & Web Calculators</h4>
+                    <p>Calculators are now apps—like <b>XCalc</b>—with advanced features, history, and beautiful design.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <h4>The Future</h4>
+                    <p>AI-powered calculators, voice input, and even more powerful tools are on the horizon.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/ishit/fullstack/MyMvcApp/MyMvcApp.csproj": {}
+    "/Users/ishit/fullstack/XCalc/MyMvcApp.csproj": {}
   },
   "projects": {
-    "/Users/ishit/fullstack/MyMvcApp/MyMvcApp.csproj": {
+    "/Users/ishit/fullstack/XCalc/MyMvcApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ishit/fullstack/MyMvcApp/MyMvcApp.csproj",
+        "projectUniqueName": "/Users/ishit/fullstack/XCalc/MyMvcApp.csproj",
         "projectName": "MyMvcApp",
-        "projectPath": "/Users/ishit/fullstack/MyMvcApp/MyMvcApp.csproj",
+        "projectPath": "/Users/ishit/fullstack/XCalc/MyMvcApp.csproj",
         "packagesPath": "/Users/ishit/.nuget/packages/",
-        "outputPath": "/Users/ishit/fullstack/MyMvcApp/obj/",
+        "outputPath": "/Users/ishit/fullstack/XCalc/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/ishit/.nuget/NuGet/NuGet.Config"

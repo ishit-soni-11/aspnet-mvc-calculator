@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4IKyBHuO+KY=",
+  "dgSpecHash": "vpfLtpawA3E=",
   "success": true,
-  "projectFilePath": "/Users/ishit/fullstack/MyMvcApp/MyMvcApp.csproj",
+  "projectFilePath": "/Users/ishit/fullstack/XCalc/MyMvcApp.csproj",
   "expectedPackageFiles": [
     "/Users/ishit/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/ishit/.nuget/packages/microsoft.bcl.asyncinterfaces/7.0.0/microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
