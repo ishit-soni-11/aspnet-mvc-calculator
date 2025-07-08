@@ -15,7 +15,7 @@ namespace XCalc.Controllers
         }
         public IActionResult Calculator()
         {
-            return View();
+            return View(Calculator);
         }
         public IActionResult Privacy()
         {
