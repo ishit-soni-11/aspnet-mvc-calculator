@@ -1,11 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 
-
 namespace XCalc.Controllers
 {
     public class HomeController : Controller
     {
-        [Route("Home")]
+        // Remove the [Route("Home")] attribute - this is causing conflicts
         public IActionResult HomeRedirect()
         {
             return RedirectToAction("Index");
@@ -20,10 +19,10 @@ namespace XCalc.Controllers
         {
             return View();
         }
+
         public IActionResult CalculationHistory()
         {
             return View();
         }
     }
 }
-
