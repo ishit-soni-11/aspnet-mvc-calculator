@@ -8,17 +8,14 @@ namespace XCalc.Controllers
         {
             return RedirectToAction("Index");
         }
-        public IActionResult Calculator()
-        {
-            return Content("Test Calculator Page");
-        }
+
         public IActionResult Index()
         {
             return View();
         }
         public IActionResult Calculator()
         {
-            return View(Calculator);
+            return View();
         }
         public IActionResult Privacy()
         {
