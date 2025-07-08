@@ -1,34 +1,37 @@
+using XCalc.Data;
 using Microsoft.EntityFrameworkCore;
-using XCalc.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddControllersWithViews();
-
-// Add Entity Framework (if you're using it)
-builder.Services.AddDbContext<CalculatorContext>(options =>
-    options.UseInMemoryDatabase("CalculatorDB"));
+builder.Services.AddSession();
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+// Better error handling
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+}
+else
 {
     app.UseExceptionHandler("/Home/Error");
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
+app.UseHttpsRedirection(); // Uncomment this for better security
 app.UseStaticFiles();
-
 app.UseRouting();
-
+app.UseSession();
 app.UseAuthorization();
 
-// CRITICAL: Set default route to Calculator instead of Home
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Calculator}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+
+// Remove this line - it's causing your routing issues
+// app.MapFallbackToController("Index", "Home");
 
 app.Run();
