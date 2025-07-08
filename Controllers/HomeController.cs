@@ -4,7 +4,6 @@ namespace XCalc.Controllers
 {
     public class HomeController : Controller
     {
-        // Remove the [Route("Home")] attribute - this is causing conflicts
         public IActionResult HomeRedirect()
         {
             return RedirectToAction("Index");
@@ -14,7 +13,10 @@ namespace XCalc.Controllers
         {
             return View();
         }
-
+        public IActionResult Calculator()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
