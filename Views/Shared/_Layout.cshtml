@@ -33,20 +33,18 @@
                         <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Calculator"
-                            asp-action="Index">Calculator</a>
+                        <!-- Change this to point to Home controller -->
+                        <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Calculator</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="Calculator" asp-action="FullHistory">History</a>
+                        <!-- Change this to point to your CalculationHistory action -->
+                        <a class="nav-link" asp-controller="Home" asp-action="CalculationHistory">History</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" asp-controller="Home" asp-action="Privacy">Privacy</a>
                     </li>
-
-
                 </ul>
             </div>
-        </div>
     </nav>
 
     <main>
